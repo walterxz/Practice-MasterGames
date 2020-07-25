@@ -1,0 +1,39 @@
+-var titulo = "Juego del 2020"
+-var titulos = ["Cyberpunk 2077 tiene tres prólogos distintos","Titulo B","Titulo C"]
+-var usuario ="Walter"
+mixin caja(imagen,titulo,contenido)
+   .caja
+    .caja__imagen: img(src="images/"+imagen)
+    .caja__contenido
+     h3 #{titulo}
+     p #{contenido}
+     a(href="/html/articulo.html") Has click aqui :D
+
+doctype html
+html
+ head
+  meta(charset="UTF-8")
+  link(rel="stylesheet", href="css/ejercicio-pug.css")
+body
+ header
+  h1 MasterGames
+  if usuario
+   a Hola #{usuario}
+  else
+   a.boton Registrarse
+ section.intro
+  .intro__imagen: img(src="images/imagen.png")
+  .intro__contenido
+   h2 #{titulo}
+   p
+    | Lorem ipsum dolor sit amet, consectetur
+    | adipisicing elit. Vitae, praesentium! 
+    hr
+    | Aprendiendo a utilizar Preprocesadores 
+    br 
+    strong PUG, LESS con BEM
+   a(href="/html/articulo.html").boton Leer mas
+ main.contenido
+  +caja('cuphead.jpg',titulos[0],'Lorem ipsum dolor sit amet, consectetur')
+  +caja('xbox.jpg',titulos[1],'Lorem ipsum dolor sit amet, consectetur')
+  +caja('fortnite.jpg',titulos[2],'Lorem ipsum dolor sit amet, consectetur')
